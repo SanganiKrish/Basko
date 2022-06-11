@@ -11,6 +11,10 @@ public class StaticData {
     //* Retrofit Ads URL *//
     public static final String ADS_URL = "http://apploginads.noorinfotech.in/api/ads/";
 
+    public static String CATEGORY_PLAY_GAME = "play_game";
+    public static final String NEW_GAME_URL = "https://poppyplaytimeonline.com/huggy-wuggy-vent-scene";
+
+
     //* Ads Id And Name *//
 
     public static final String APP_ID = "app_id";

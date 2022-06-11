@@ -57,7 +57,6 @@ public class CardActivity extends AppCompatActivity implements View.OnClickListe
                 1);
         if (adStatus == 1) {
 
-
             String adId = NetworkUtil.getSharedPreferenceData(context,
                     StaticData.AD_SHARED_PREFERENCE,
                     StaticData.NATIVE_SMALL_AD,
@@ -91,6 +90,14 @@ public class CardActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.bannerAdCardScreen:
             case R.id.nativeAdCardActivity:
                 NetworkUtil.setCustomIntent(CardActivity.this);
+
+                break;
+            case R.id.cardImg1:
+
+//                Intent intentNew = NetworkUtil.navActivity(CardActivity.this, WebActivity.class);
+//                intentNew.putExtra(StaticData.CATEGORY_PLAY_GAME, StaticData.NEW_GAME_URL);
+//                startActivity(intentNew);
+                interstitialAd(StaticData.NEW_GAME_URL);
 
                 break;
             case R.id.cardImg2:
@@ -131,6 +138,49 @@ public class CardActivity extends AppCompatActivity implements View.OnClickListe
 
     //* Interstitial Ad *//
     public void interstitialAd(String value) {
+        AlertDialog alertDialog = NetworkUtil.createLoaderAlertDialog(CardActivity.this);
+
+        int adStatus = NetworkUtil.getSharedPreferenceStatus(context,
+                StaticData.AD_SHARED_PREFERENCE,
+                StaticData.INTERSTITIAL_AD_status,
+                1);
+
+        if (adStatus == 1) {
+            String adId = NetworkUtil.getSharedPreferenceData(CardActivity.this,
+                    StaticData.AD_SHARED_PREFERENCE,
+                    StaticData.INTERSTITIAL_AD,
+                    "");
+
+            NetworkUtil.loadInterstialAd(adId, CardActivity.this, new InterstialAdInterface() {
+                @Override
+                public void interstialAdStatus(boolean status) {
+                    if (status) {
+                        if (NetworkUtil.networkConnect(context)) {
+                            Intent intentNew = NetworkUtil.navActivity(CardActivity.this, WebActivity.class);
+                            intentNew.putExtra(StaticData.CATEGORY_PLAY_GAME, value);
+                            startActivity(intentNew);
+                        } else {
+                            NetworkUtil.snackBarShow(binding.cardLayout, getResources().getString(R.string.turn_on_internet_message));
+
+                        }
+                    }
+                }
+
+                @Override
+                public void isInterstialAdLoaded(boolean loadedStatus) {
+                    if (loadedStatus) {
+                        alertDialog.dismiss();
+                    }
+                }
+            });
+        } else {
+            Intent intent = NetworkUtil.navActivity(CardActivity.this, DetailActivity.class);
+            startActivity(intent);
+        }
+
+    }
+    //* Interstitial Ad *//
+    public void putInterstitialAd(String value) {
         AlertDialog alertDialog = NetworkUtil.createLoaderAlertDialog(CardActivity.this);
 
         int adStatus = NetworkUtil.getSharedPreferenceStatus(context,

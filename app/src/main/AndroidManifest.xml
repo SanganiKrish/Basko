@@ -16,6 +16,10 @@
         android:theme="@style/Theme.Basko"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".view.WebActivity"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+        <activity
             android:name=".view.ThankYouActivity"
             android:screenOrientation="portrait"
             android:exported="false" />
