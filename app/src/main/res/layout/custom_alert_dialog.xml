@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="@dimen/alert_box_card_view_width"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/alert_box_card_view_margin"
+        android:backgroundTint="@color/white"
+        app:cardCornerRadius="@dimen/alert_box_card_view_corner_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textViewTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/home_screen_alert_box_title"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/alert_box_title_text_size"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <FrameLayout
+                android:id="@+id/alertNativeSmallAd"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/native_small_ad"
+                android:background="@color/white"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/alertNativeSmallAd">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonYes"
+                    android:layout_width="135dp"
+                    android:layout_height="55dp"
+                    android:layout_marginEnd="20dp"
+                    android:backgroundTint="@color/button_color"
+                    android:text="@string/home_screen_alert_box_positive_button"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    app:cornerRadius="20dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/buttonNo"
+                    android:layout_width="135dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="20dp"
+                    android:backgroundTint="@color/button_color"
+                    android:text="@string/home_screen_alert_box_negative_button"
+                    android:textColor="@color/white"
+                    android:textSize="20dp"
+                    app:cornerRadius="20dp" />
+
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

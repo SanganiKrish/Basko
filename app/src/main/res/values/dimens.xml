@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--    Main Activity-->
+    <dimen name="main_activity_button_margin">20dp</dimen>
+    <dimen name="main_activity_button_text_size">18sp</dimen>
+
+
+    <!--    Coman Native ad Size-->
+    <dimen name="native_small_ad">150dp</dimen>
+
+    <!--    Home Activity-->
+    <dimen name="layout_margin">20dp</dimen>
+
+    <!--    Ads Loader -->
+    <dimen name="ads_loader_size">120dp</dimen>
+
+    <!--    Home Screen AlertBox(Home Activity)-->
+    <dimen name="alert_box_card_view_height">150dp</dimen>
+    <dimen name="alert_box_card_view_width">360dp</dimen>
+    <dimen name="alert_box_card_view_margin">30dp</dimen>
+    <dimen name="alert_box_card_view_corner_radius">10dp</dimen>
+    <dimen name="alert_box_title_text_size">20sp</dimen>
+    <dimen name="alert_box_message_text_size">18sp</dimen>
+
+</resources>
