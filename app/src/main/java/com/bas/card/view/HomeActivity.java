@@ -178,9 +178,9 @@ public class HomeActivity extends AppCompatActivity implements View.OnClickListe
         Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.custom_alert_dialog);
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
-
         TextView textPositiveButtonYes, textNegativeButtonNo;
         FrameLayout alertNativeAd;
+
         textPositiveButtonYes = dialog.findViewById(R.id.buttonYes);
         textNegativeButtonNo = dialog.findViewById(R.id.buttonNo);
         alertNativeAd = dialog.findViewById(R.id.alertNativeSmallAd);
